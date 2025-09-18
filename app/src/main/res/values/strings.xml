@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MockLocation</string>
+    <string name="extension_name">mocklocation</string>
+
+    <string name="mocklocation_button">MockLocation</string>
+    <string name="mocklocation_button_description">Toggle location</string>
+</resources>
