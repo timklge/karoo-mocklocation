@@ -1,8 +1,9 @@
-# Karoo Notepad Extension
+# Karoo MockLocation Extension
 
 ![GitHub License](https://img.shields.io/github/license/timklge/karoo-mocklocation)
 
-Simple karoo extension to mock gps locations.
+Simple karoo extension to mock gps locations. For development / debugging purposes only.
+Locations can be set via adb broadcast intents.
 
 Compatible with Karoo 3 devices.
 
@@ -54,6 +55,7 @@ adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION \
 ## Examples
 
 ### Static Location (Berlin, Germany)
+
 ```bash
 adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION \
   --ed latitude 52.520008 \
@@ -62,6 +64,7 @@ adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION \
 ```
 
 ### Moving Location with Speed and Bearing
+
 ```bash
 # Simulate cycling at 20 km/h heading northeast
 adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION \
@@ -91,19 +94,6 @@ adb logcat | grep "MockLocationReceiver"
 ```bash
 adb logcat | grep "karoo-mocklocation"
 ```
-
-### Invalid coordinates error:
-Make sure both latitude and longitude are provided and are not 0.0:
-```bash
-# This will be ignored (invalid):
-adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION
-
-# This will work:
-adb shell am broadcast -a de.timklge.karoomocklocation.SET_MOCK_LOCATION \
-  --ed latitude 52.520008 \
-  --ed longitude 13.404954
-```
-
 
 ## Credits
 
